@@ -13,7 +13,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->singleton('HelpSpot\API', function ($app) {
+            return new \HelpSpot\API($app->make('HttpClient'));
+        });
+        // dd($this->app);
     }
 
     /**

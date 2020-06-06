@@ -22,3 +22,7 @@ Route::get('/test', function() {
 });
 
 Route::get('/show', 'UserController@show');
+
+Route::get('/service', 'ServiceController@index');
+
+Route::get('/service/call', 'ServiceController@call');

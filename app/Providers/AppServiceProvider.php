@@ -16,7 +16,14 @@ class AppServiceProvider extends ServiceProvider
         $this->app->singleton('HelpSpot\API', function ($app) {
             return new \HelpSpot\API($app->make('HttpClient'));
         });
-        // dd($this->app);
+
+        // Myclassを登録するだけで、Slackクラスへの依存関係も解決する
+        $this->app->bind('myclass', \App\Http\Myclass::class);
+
+        // $this->app->bind(
+        //     \App\Http\Message::class,
+        //     \App\Http\Myclass::class
+        // );
     }
 
     /**

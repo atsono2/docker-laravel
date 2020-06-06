@@ -1,5 +1,7 @@
 <?php
 
+// ブラウザからアクセスがあると、public/indexが実行される
+
 /**
  * Laravel - A PHP Framework For Web Artisans
  *

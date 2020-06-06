@@ -11,6 +11,8 @@
 |
 */
 
+// dd(dirname(__DIR__));
+// laravelのコアであるApplicationクラスのインスタンスを取得
 $app = new Illuminate\Foundation\Application(
     $_ENV['APP_BASE_PATH'] ?? dirname(__DIR__)
 );

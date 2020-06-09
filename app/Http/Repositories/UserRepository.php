@@ -16,4 +16,8 @@ class UserRepository
     public function find ($id) {
         return $this->user->find($id);
     }
+
+    public function edit ($request) {
+
+    }
 }

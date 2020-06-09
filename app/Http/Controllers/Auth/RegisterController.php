@@ -62,6 +62,7 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
+    // 新規登録をするメソッド
     protected function create(array $data)
     {
         return User::create([

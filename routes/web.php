@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,7 @@ Route::get('/', function () {
 });
 
 Route::get('/test', function() {
+    dd(Auth::id());
     return 12345;
 });
 
@@ -32,6 +34,8 @@ Route::get('/name', function() {
 
 Route::get('/show', 'UserController@show');
 
-Route::get('/service', 'ServiceController@index');
+Route::get('/edit/{id}', 'ProfileController@index')->name('edit');
 
-Route::get('/service/call', 'ServiceController@call');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

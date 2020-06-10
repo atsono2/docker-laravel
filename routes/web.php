@@ -15,15 +15,10 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', function () {
-    // EncryptionServiceProviderでencrypterという名前で登録している
-    // $encrypt = app()->make('encrypter');
-    // $pass = $encrypt->encrypt('password');
-    // dd($pass);
     return view('welcome');
 });
 
 Route::get('/test', function() {
-    dd(Auth::id());
     return 12345;
 });
 
@@ -32,9 +27,17 @@ Route::get('/name', function() {
     return $myName;
 });
 
+// checkAge middleware のテスト
+Route::get('age', 'AgeController@index');
+Route::post('age/post', 'AgeController@post')->middleware('checkAge')->name('age.post');
+
 Route::get('/show', 'UserController@show');
 
 Route::get('/edit/{id}', 'ProfileController@index')->name('edit');
+
+// Authテスト
+Route::get('/test/menu', 'Test\MenuController@menu');
+
 
 Auth::routes();
 

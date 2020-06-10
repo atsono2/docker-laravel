@@ -13,6 +13,7 @@ class Kernel extends HttpKernel
      *
      * @var array
      */
+    // 全てのリクエストで実行する
     protected $middleware = [
         \App\Http\Middleware\TrustProxies::class,
         \App\Http\Middleware\CheckForMaintenanceMode::class,
@@ -50,6 +51,7 @@ class Kernel extends HttpKernel
      *
      * @var array
      */
+    // 指定したルートに設定する
     protected $routeMiddleware = [
         'auth' => \App\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
@@ -61,6 +63,7 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+        'checkAge' => \App\Http\Middleware\CheckAge::class,
     ];
 
     /**

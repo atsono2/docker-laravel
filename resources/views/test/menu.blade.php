@@ -3,8 +3,8 @@
     <meta charset="utf-8">
 </head>
 <body>
-    <a href="">照会処理</a><br />
-    <a href="">更新処理</a>
+    <a href={{ route('search') }}>照会処理</a><br />
+    <a href={{ route('update') }}>更新処理</a>
 
     <div>
         <a class="dropdown-item" href="{{ route('logout') }}"

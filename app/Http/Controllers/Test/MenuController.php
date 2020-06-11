@@ -16,6 +16,44 @@ class MenuController extends Controller
         } else {
             return view('auth.login');
         }
+    }
 
+    public function search(Request $request)
+    {
+        $action = $request->get('action', 'back');
+        $input = $request->except('action');
+
+        if($request->action === 'back') {
+            return view('test/menu');
+        }
+
+        return view('test.search');
+    }
+
+    public function update(Request $request )
+    {
+        $action = $request->get('action', 'back');
+        $input = $request->except('action');
+
+        if($request->action === 'back') {
+            return view('test/menu');
+        }
+
+        return view('test.update');
+    }
+
+    public function complete(Request $request )
+    {
+        $action = $request->get('action', 'back');
+        $input = $request->except('action');
+
+        if($request->action === 'back') {
+            return view('test/menu');
+        }
+
+        return view('test.complete')
+            ->with([
+                'input' => $input,
+            ]);
     }
 }

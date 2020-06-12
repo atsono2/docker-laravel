@@ -10,7 +10,7 @@
     {{ Session('adminmsg') }}<br />
 @endif
 
-{!! Form::open(['url' => route('complete')]) !!}
+{!! Form::open(['url' => route('update')]) !!}
 <input type="text" name="inputdata">
 <br /><br />
 <button type="submit" name="action" value="update">{{__('update')}}</button>

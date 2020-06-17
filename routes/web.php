@@ -32,7 +32,7 @@ Route::get('/show', 'UserController@show');
 Route::get('/edit/{id}', 'ProfileController@index')->name('edit');
 
 ///// Authテスト /////
-Route::match(['get', 'post'], '/test/menu', 'Test\MenuController@menu');
+Route::match(['get', 'post'], 'test/menu', 'Test\MenuController@menu');
 Route::match(['get', 'post'], 'test/search', 'Test\MenuController@search')->name('search');
 Route::match(['get', 'post'], 'test/update', 'Test\MenuController@update')->name('update');
 Route::match(['get', 'post'], 'test/complete', 'Test\MenuController@complete')->name('complete');

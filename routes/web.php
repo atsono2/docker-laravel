@@ -39,6 +39,7 @@ Route::match(['get', 'post'], 'test/complete', 'Test\MenuController@complete')->
 ///// Authテスト /////
 
 ///// キャッシュテスト /////
+// TODO:キャッシュがあればキャッシュから取得し、そうでなければDBから取得する //
 Route::get('storeCache', 'UserController@storeCache');
 Route::get('showCache', 'UserController@showCache');
 ///// キャッシュテスト /////

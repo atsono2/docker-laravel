@@ -38,6 +38,11 @@ Route::match(['get', 'post'], 'test/update', 'Test\MenuController@update')->name
 Route::match(['get', 'post'], 'test/complete', 'Test\MenuController@complete')->name('complete');
 ///// Authテスト /////
 
+///// キャッシュテスト /////
+Route::get('storeCache', 'UserController@storeCache');
+Route::get('showCache', 'UserController@showCache');
+///// キャッシュテスト /////
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
